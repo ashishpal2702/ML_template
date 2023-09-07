@@ -2,8 +2,8 @@
 data_source = 'local'
 ## Input Raw data
 
-train_data_path = '/Users/apal/Documents/GitHub/ML_template/data/Bank_Personal_Loan_Modelling.csv'
-test_data_path = '/Users/apal/Documents/GitHub/ML_template/data/Bank_Personal_Loan_Modelling.csv'
+train_data_path = 'data/Bank_Personal_Loan_Modelling.csv'
+test_data_path = 'data/Bank_Personal_Loan_Modelling.csv'
 ##Output Prediction
 model_prediction = '../data/prediction/prediction.csv'
 

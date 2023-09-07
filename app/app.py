@@ -3,118 +3,114 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import sys
-sys.path.append('src/prediction')
-from src.prediction import Prediction
 from src.utils import load_config
+from src.prediction import Prediction
+
 
 
 def main():
     # Setting Application title
-    st.title("Telcom Customer Churn Prediction App")
+    st.title("Personal Loan Prediction App")
 
     # Setting Application description
     st.markdown(
         """
-     :dart:  This  app is made to predict customer churn in a telecommunication use case.
+     :dart:  This  app is made to predict whether customer will take Personal loan or not.
     The application is functional for both online prediction and batch data prediction. \n
     """
     )
     st.markdown("<h3></h3>", unsafe_allow_html=True)
 
     # Setting Application sidebar default
-    image = Image.open("./app/App.jpg")
+    #image = Image.open("./app/App.jpg")
     add_selectbox = st.sidebar.selectbox(
         "How would you like to predict?", ("Online", "Batch")
     )
-    st.sidebar.info("This app is created to predict Customer Churn")
-    st.sidebar.image(image)
+    st.sidebar.info("This app is created to predict Personal Loan")
+    #st.sidebar.image(image)
 
     config = load_config()
     p = Prediction()
-
+    model_weight_path = config['model_weight_path']
+    feature_path = config['feature_path']
+    
     if add_selectbox == "Online":
         st.info("Input data below")
         # Based on our optimal features selection
         st.subheader("Demographic data")
-        seniorcitizen = st.selectbox("Senior Citizen:", ("Yes", "No"))
-        dependents = st.selectbox("Dependent:", ("Yes", "No"))
-
-        st.subheader("Payment data")
-        tenure = st.slider(
-            "Number of months the customer has stayed with the company",
-            min_value=0,
-            max_value=72,
-            value=0,
-        )
-        contract = st.selectbox("Contract", ("Month-to-month", "One year", "Two year"))
-        paperlessbilling = st.selectbox("Paperless Billing", ("Yes", "No"))
-        PaymentMethod = st.selectbox(
-            "PaymentMethod",
-            (
-                "Electronic check",
-                "Mailed check",
-                "Bank transfer (automatic)",
-                "Credit card (automatic)",
-            ),
-        )
-        monthlycharges = st.number_input(
-            "The amount charged to the customer monthly",
+        Age = st.number_input(
+            "The Age of the Person",
             min_value=0,
             max_value=150,
             value=0,
         )
-        totalcharges = st.number_input(
-            "The total amount charged to the customer",
+        Experience = st.number_input(
+            "The no years of Experience  of the Person",
             min_value=0,
-            max_value=10000,
+            max_value=150,
+            value=0,
+        )
+        Family = st.number_input(
+            "No of Family members in Family",
+            min_value=0,
+            max_value=50,
+            value=0,
+        )
+        Education = st.number_input(
+            "Education level",
+            min_value=0,
+            max_value=50,
             value=0,
         )
 
-        st.subheader("Services signed up for")
-        mutliplelines = st.selectbox(
-            "Does the customer have multiple lines", ("Yes", "No", "No phone service")
+        st.subheader("Finance data")
+        Income = st.slider(
+            "The Income of the Person",
+            min_value=0,
+            max_value=100000000,
+            value=0,
         )
-        phoneservice = st.selectbox("Phone Service:", ("Yes", "No"))
-        internetservice = st.selectbox(
-            "Does the customer have internet service", ("DSL", "Fiber optic", "No")
+        st.subheader("Credit Card Spend")
+        CCAvg = st.slider(
+            "Avg Credit Card Spend of the person",
+            min_value=0,
+            max_value=100000000,
+            value=0,
         )
-        onlinesecurity = st.selectbox(
-            "Does the customer have online security",
-            ("Yes", "No", "No internet service"),
+        st.subheader("Mortgage")
+        Mortgage = st.selectbox(
+            "Does the customer has Mortgages", (1, 0)
         )
-        onlinebackup = st.selectbox(
-            "Does the customer have online backup", ("Yes", "No", "No internet service")
+        st.subheader("Securities_Account")
+        Securities_Account = st.selectbox(
+            "Does the customer has Securities Account", (1, 0)
         )
-        techsupport = st.selectbox(
-            "Does the customer have technology support",
-            ("Yes", "No", "No internet service"),
+        st.subheader("CD_Account")
+        CD_Account = st.selectbox(
+            "Does the customer has CD Account", (1, 0)
         )
-        streamingtv = st.selectbox(
-            "Does the customer stream TV", ("Yes", "No", "No internet service")
+        st.subheader("Online Account")
+        Online = st.selectbox(
+            "Does the customer has Online Account", (1, 0)
         )
-        streamingmovies = st.selectbox(
-            "Does the customer stream movies", ("Yes", "No", "No internet service")
+        st.subheader("CreditCard")
+        CreditCard = st.selectbox(
+            "Does the customer has CreditCard", (1, 0)
         )
 
         data = {
-            "SeniorCitizen": seniorcitizen,
-            "Dependents": dependents,
-            "tenure": tenure,
-            "PhoneService": phoneservice,
-            "MultipleLines": mutliplelines,
-            "InternetService": internetservice,
-            "OnlineSecurity": onlinesecurity,
-            "OnlineBackup": onlinebackup,
-            "TechSupport": techsupport,
-            "StreamingTV": streamingtv,
-            "StreamingMovies": streamingmovies,
-            "Contract": contract,
-            "PaperlessBilling": paperlessbilling,
-            "PaymentMethod": PaymentMethod,
-            "MonthlyCharges": monthlycharges,
-            "TotalCharges": totalcharges,
-        }
+            'Age':Age,
+            'Experience':Experience,
+            'Income': Income,
+            'Family':Family,
+            'CCAvg':CCAvg,
+            'Education':Education,
+            'Mortgage':Mortgage,
+            'Securities Account':Securities_Account,
+            'CD Account':CD_Account,
+            'Online':Online,
+            'CreditCard':CreditCard
+                }
         features_df = pd.DataFrame.from_dict([data])
         st.markdown("<h3></h3>", unsafe_allow_html=True)
         st.write("Overview of input is shown below")
@@ -122,16 +118,14 @@ def main():
         st.dataframe(features_df)
 
         # Preprocess inputs
-        model_weight_path = config['model_weight_path']
-        feature_path = config['feature_path']
         prediction = p.live_predict(features_df,model_weight_path, feature_path )
         print(prediction)
 
         if st.button("Predict"):
             if prediction == 1:
-                st.warning("Yes, the customer will terminate the service.")
+                st.warning("Yes, the customer will Take Personal Loan.")
             else:
-                st.success("No, the customer is happy with Telco Services.")
+                st.success("No, the customer will not Take Personal Loan.")
 
     else:
         st.subheader("Dataset upload")
@@ -143,12 +137,12 @@ def main():
             st.markdown("<h3></h3>", unsafe_allow_html=True)
             if st.button("Predict"):
                 # Get batch prediction
-                prediction = p.live_predict(data)
+                prediction = p.live_predict(data,model_weight_path, feature_path)
                 data["Predictions"] = prediction
                 data["Predictions_Inference"] = data["Predictions"].replace(
                     {
-                        1: "Yes, the customer will terminate the service.",
-                        0: "No, the customer is happy with Telco Services.",
+                        1: "Yes, the customer will Take Personal Loan.",
+                        0: "No, the customer will not Take Personal Loan.",
                     }
                 )
 
@@ -157,5 +151,5 @@ def main():
                 st.write(data)
 
 
-if name=="__main__":
+if __name__ == "__main__":
     main()
