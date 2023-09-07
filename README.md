@@ -21,8 +21,7 @@ Run
 
 ### Usage
 
-Download Data from
-https://www.kaggle.com/datasets/pathtoai/human-activity-recognition-using-smartphone
+Download Data from [Data](./Data) Folder. 
 
 Update the training data path in [config.toml](./config/config.toml)
 
