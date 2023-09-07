@@ -3,7 +3,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-
+import sys
+sys.path.append('src/prediction')
 from src.prediction import Prediction
 from src.utils import load_config
 
@@ -156,5 +157,5 @@ def main():
                 st.write(data)
 
 
-if __name__ == "__main__":
+if name=="__main__":
     main()

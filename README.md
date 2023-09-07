@@ -28,15 +28,11 @@ Update the training data path in [config.toml](./config/config.toml)
 
 For Model Training: 
 
-`python train.py`
+`python src/train.py`
 
 For Batch Prediction: 
 
-`python predict.py`
-
-For Model Real time Prediction: 
-
-`python inference.py <model_weight> <test_data> <output_data>`
+`python src/predict.py`
 
 
 For Model Inference Application : 
