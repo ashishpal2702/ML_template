@@ -3,6 +3,5 @@ pandas
 joblib
 sklearn
 matplotlib
-sklearn
+scikit-learn
 streamlit
-PIL
