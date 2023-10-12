@@ -46,6 +46,8 @@ class Prediction:
         
         print(y_prediction)
         
+        return y_prediction[0]
+        
 if __name__ == "__main__":
     print("Start Model Prediction on Test data")
     config = load_config()
