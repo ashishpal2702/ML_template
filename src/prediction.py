@@ -3,7 +3,7 @@ import pandas as pd
 import os 
 import joblib
 
-from utils import load_config
+from src.utils import load_config
 
 class Prediction:
     
