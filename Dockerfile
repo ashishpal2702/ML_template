@@ -1,6 +1,6 @@
 FROM python:3.10.5-slim-buster
 
-EXPOSE 9001
+EXPOSE 8000 8502
 
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install supervisor
@@ -17,3 +17,4 @@ RUN pip install -e .
 
 # Initializing from supervisord
 CMD ["supervisord","-c","/mnt/src/config/service_script.conf"]
+#CMD [streamlit run src/app.py ]

@@ -8,6 +8,8 @@ from src.prediction import Prediction
 
 
 
+
+
 def main():
     # Setting Application title
     st.title("Personal Loan Prediction App")
