@@ -11,7 +11,7 @@ env:
   ECR_REPOSITORY: mlops-demo-ecr         # set this to your Amazon ECR repository name
   ECS_SERVICE: mlops-demo                 # set this to your Amazon ECS service name
   ECS_CLUSTER: aws-mlops-demo                 # set this to your Amazon ECS cluster name
-  CONTAINER_NAME: MY_CONTAINER_NAME           # set this to the name of the container in the
+  CONTAINER_NAME: mlop-demo-ml-template           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 permissions:
   id-token: write
