@@ -1,6 +1,6 @@
 FROM python:3.10.5-slim-buster
 
-EXPOSE 8000 8502
+EXPOSE 8000 8080
 
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install supervisor
