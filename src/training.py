@@ -54,7 +54,6 @@ class Training:
         accuracy = rf_clf.score(X_test, Y_test)
         Y_predicted  = rf_clf.predict(X_test)
         print('\nRandom Forest Model accuracy = ', accuracy)
-        print('\nTest labels, Predicted labels')
         
         self.save_model(rf_clf, model_weight_path)
         

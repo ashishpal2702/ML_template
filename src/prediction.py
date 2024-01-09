@@ -3,12 +3,11 @@ import pandas as pd
 import os 
 import joblib
 
-from src.utils import load_config
+from utils import load_config
 
 class Prediction:
     
-    def load_data(self,data_path):
-        
+    def load_data(self,data_path):  
         df = pd.read_csv(data_path)
         print("loaded test data sucessfully")
         print("Number of test records", df.shape)
@@ -26,7 +25,7 @@ class Prediction:
         
         return feature_columns
         
-    def predict(self,data_path,model_weight_path,feature_path):
+    def batch_predict(self,data_path,model_weight_path,feature_path):
         
         data = self.load_data(data_path)
         
@@ -34,8 +33,10 @@ class Prediction:
         feature_columns= self.load_features(feature_path)
         test_data = data[feature_columns]
         y_prediction = model.predict(test_data)
-        
-        print(y_prediction)
+        data['prediction'] = y_prediction
+        #print(y_prediction)
+        print(data['prediction'].value_counts())
+        ## 
         
     def live_predict(self,data,model_weight_path,feature_path):
         
@@ -55,6 +56,4 @@ if __name__ == "__main__":
     model_weight_path = config['model_weight_path']
     feature_path = config['feature_path']
     train_obj = Prediction()
-    train_obj.predict(data_path,model_weight_path,feature_path)
-    
-    
+    train_obj.batch_predict(data_path,model_weight_path,feature_path)
