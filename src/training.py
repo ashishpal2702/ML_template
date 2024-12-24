@@ -31,7 +31,7 @@ class Training:
         Y = df['Personal_Loan']
         X = df.drop(['ID', 'ZIP Code', 'Personal_Loan'], axis=1)
 
-        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.30, random_state=5)
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.3, random_state=5)
         
         return X_train, X_test, Y_train, Y_test
     

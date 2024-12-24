@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/931338163892845014/2d044656cb4548e09455442a5122304e/artifacts
+end_time: 1735025795082
+entry_point_name: ''
+experiment_id: '931338163892845014'
+lifecycle_stage: active
+run_id: 2d044656cb4548e09455442a5122304e
+run_name: casual-penguin-908
+run_uuid: 2d044656cb4548e09455442a5122304e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735025787812
+status: 3
+tags: []
+user_id: apal

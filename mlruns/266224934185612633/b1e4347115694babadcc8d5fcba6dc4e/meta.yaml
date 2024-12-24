@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/266224934185612633/b1e4347115694babadcc8d5fcba6dc4e/artifacts
+end_time: 1735024975880
+entry_point_name: ''
+experiment_id: '266224934185612633'
+lifecycle_stage: active
+run_id: b1e4347115694babadcc8d5fcba6dc4e
+run_name: melodic-tern-414
+run_uuid: b1e4347115694babadcc8d5fcba6dc4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735024971483
+status: 3
+tags: []
+user_id: apal

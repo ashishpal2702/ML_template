@@ -1,0 +1,14 @@
+digest: 4a4f82d6
+name: dataset
+profile: '{"num_rows": 3500, "num_elements": 38500}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "Age", "required": true}, {"type":
+  "long", "name": "Experience", "required": true}, {"type": "long", "name": "Income",
+  "required": true}, {"type": "long", "name": "Family", "required": true}, {"type":
+  "double", "name": "CCAvg", "required": true}, {"type": "long", "name": "Education",
+  "required": true}, {"type": "long", "name": "Mortgage", "required": true}, {"type":
+  "long", "name": "Securities Account", "required": true}, {"type": "long", "name":
+  "CD Account", "required": true}, {"type": "long", "name": "Online", "required":
+  true}, {"type": "long", "name": "CreditCard", "required": true}]}'
+source: '{"tags": {"mlflow.user": "apal", "mlflow.source.name": "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/931338163892845014/cc97e10dd84c437d88b81a3b92524588/artifacts
+end_time: 1735026038021
+entry_point_name: ''
+experiment_id: '931338163892845014'
+lifecycle_stage: active
+run_id: cc97e10dd84c437d88b81a3b92524588
+run_name: auspicious-crow-81
+run_uuid: cc97e10dd84c437d88b81a3b92524588
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735026032353
+status: 3
+tags: []
+user_id: apal

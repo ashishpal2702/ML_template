@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/931338163892845014/468b9667f9aa48698eb4d92ffe2dc003/artifacts
+end_time: 1735025891844
+entry_point_name: ''
+experiment_id: '931338163892845014'
+lifecycle_stage: active
+run_id: 468b9667f9aa48698eb4d92ffe2dc003
+run_name: aged-goat-83
+run_uuid: 468b9667f9aa48698eb4d92ffe2dc003
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735025885173
+status: 3
+tags: []
+user_id: apal

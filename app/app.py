@@ -7,7 +7,7 @@ from src.utils import load_config
 from src.prediction import Prediction
 
 
-
+# Main Function for the APP
 def main():
     # Setting Application title
     st.title("Personal Loan Prediction App")
@@ -67,14 +67,14 @@ def main():
         Income = st.slider(
             "The Income of the Person",
             min_value=0,
-            max_value=100000000,
+            max_value=1000,
             value=0,
         )
         st.subheader("Credit Card Spend")
         CCAvg = st.slider(
             "Avg Credit Card Spend of the person",
             min_value=0,
-            max_value=100000000,
+            max_value=500,
             value=0,
         )
         st.subheader("Mortgage")
@@ -153,3 +153,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    

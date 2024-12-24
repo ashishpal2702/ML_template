@@ -4,3 +4,4 @@ joblib
 matplotlib
 scikit-learn
 streamlit
+fastapi[standard] 

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/266224934185612633/725c76cfd2bc4f0dac9a2e42e8be8112/artifacts
+end_time: 1735024758998
+entry_point_name: ''
+experiment_id: '266224934185612633'
+lifecycle_stage: active
+run_id: 725c76cfd2bc4f0dac9a2e42e8be8112
+run_name: polite-hound-226
+run_uuid: 725c76cfd2bc4f0dac9a2e42e8be8112
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735024753185
+status: 3
+tags: []
+user_id: apal

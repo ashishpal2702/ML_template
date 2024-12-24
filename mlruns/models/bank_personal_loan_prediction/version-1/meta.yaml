@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1735025935673
+current_stage: None
+description: ''
+last_updated_timestamp: 1735025935673
+name: bank_personal_loan_prediction
+run_id: 468b9667f9aa48698eb4d92ffe2dc003
+run_link: ''
+source: mlflow-artifacts:/931338163892845014/468b9667f9aa48698eb4d92ffe2dc003/artifacts/model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/931338163892845014/468b9667f9aa48698eb4d92ffe2dc003/artifacts/model
+user_id: null
+version: 1

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/266224934185612633/9fbb4ab7badd4628befcd9afad8521ff/artifacts
+end_time: 1735025153122
+entry_point_name: ''
+experiment_id: '266224934185612633'
+lifecycle_stage: active
+run_id: 9fbb4ab7badd4628befcd9afad8521ff
+run_name: popular-rook-820
+run_uuid: 9fbb4ab7badd4628befcd9afad8521ff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735025147842
+status: 3
+tags: []
+user_id: apal

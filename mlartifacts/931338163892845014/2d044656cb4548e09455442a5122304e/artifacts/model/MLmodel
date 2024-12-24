@@ -1,0 +1,31 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.0
+mlflow_version: 2.14.1
+model_size_bytes: 951116
+model_uuid: fd954b73b73f4f3c81a6390c1bbfdb08
+run_id: 2d044656cb4548e09455442a5122304e
+signature:
+  inputs: '[{"type": "long", "name": "Age", "required": true}, {"type": "long", "name":
+    "Experience", "required": true}, {"type": "long", "name": "Income", "required":
+    true}, {"type": "long", "name": "Family", "required": true}, {"type": "double",
+    "name": "CCAvg", "required": true}, {"type": "long", "name": "Education", "required":
+    true}, {"type": "long", "name": "Mortgage", "required": true}, {"type": "long",
+    "name": "Securities Account", "required": true}, {"type": "long", "name": "CD
+    Account", "required": true}, {"type": "long", "name": "Online", "required": true},
+    {"type": "long", "name": "CreditCard", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2024-12-24 07:36:28.800798'
